@@ -75,6 +75,12 @@ body{
     background:#fff;
     height: 7rem;
     border-bottom: var(--Grey-dark-2);
+
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+
+    font-size: 1.4rem;
 }
 
 .content{
@@ -91,4 +97,82 @@ body{
 .hotel-view{
     background-color: var(--color-Primary);
     flex: 1;
+}
+
+.logo{
+    height: 3.25rem;
+    margin-left:3rem
+}
+
+.search{
+    flex: 0 0 40% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-icon{
+    height: 2rem;
+    width: 2rem;
+    fill: var(--Grey-dark-3);
+}
+
+    
+   .search input{
+        font-family: inherit;
+        font-size: inherit;
+        background-color: var(--Grey-light-2);
+        border: none;
+        color: inherit;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition:all .2s;
+        margin-right: -3.25rem;
+        /*so that the button can move on the search  */
+    }
+
+    .search input:focus{
+        outline: none;
+        width: 100%;
+        background-color: var(--Grey-light-3);
+    }
+
+    .search input::-webkit-input-placeholder{
+        font-weight: 100;
+        color: var(--Grey-light-4);
+    }
+     .search input + button{
+        background-color: var(--Grey-light-3);
+
+     }
+
+    .search-button{
+        border: none;
+         background-color: var(--Grey-light-2);
+    }
+.search-button:focus{
+    outline: none;
+
+}
+
+.search-button:active{
+   transform: translateY(2px); 
+}
+
+.user-icon{
+    height: 2.25rem;
+    width: 2.25rem;
+    
+}
+
+.user-photo{
+    height: 3.75rem;
+    border-radius: 50%;
+}
+
+.user-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3rem ;
 }
