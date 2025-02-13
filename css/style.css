@@ -162,17 +162,51 @@ body{
 .user-icon{
     height: 2.25rem;
     width: 2.25rem;
-    
+    fill: var(--Grey-dark-2);
+   
 }
+
 
 .user-photo{
     height: 3.75rem;
     border-radius: 50%;
 }
+.icon-box{
+    position: relative;
+}
 
 .user-nav{
     display: flex;
-    justify-content: space-between;
+    align-self: stretch;
+    /* justify-content: space-between; */
     align-items: center;
-    margin-right: 3rem ;
+    /* margin-right: 3rem ; */
+   
+}
+
+.user-nav > *{
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%; 
+     display: flex;
+    align-items: center;
+}
+
+.user-nav > *:hover{
+     background-color: var(--Grey-light-2);
+}
+
+.user-notification{
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-Primary);
+    color: white;
+    position: absolute;
+    top: 1.5rem;
+    right:1.1rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
