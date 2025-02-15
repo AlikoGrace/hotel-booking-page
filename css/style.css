@@ -30,7 +30,8 @@ COLORS
 --Grey-dark-2: #777;
 --Grey-dark-3: #999;
 
---shadow-dark:0 2rem 6rem rgba(0,0,0,.3);;
+--shadow-dark:0 2rem 6rem rgba(0,0,0,.3);
+--shadow-light: 0 2rem 6rem rgba(0,0,0,.06);    
 
 }
 
@@ -74,7 +75,7 @@ body{
 .header{
     background:#fff;
     height: 7rem;
-    border-bottom: var(--Grey-dark-2);
+    border-bottom: 1px  solid  var(--Grey-light-2);
 
     display: flex;
     justify-content:space-between ;
@@ -92,11 +93,16 @@ body{
 .sidebar{
     background-color: var(--Grey-dark-1);
     flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }
 
 .hotel-view{
-    background-color: var(--color-Primary);
+    
     flex: 1;
+    
+    height:80rem ;
 }
 
 .logo{
@@ -209,4 +215,212 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.side-nav{
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+}
+.side-nav-item{
+    position: relative;
+    margin-bottom: .5rem; 
+} 
+
+.side-nav-item &:not(:last-child){
+   margin-bottom: .5rem; 
+}
+.side-nav-item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-Primary);
+    transform: scaleY(0);
+    transition: transform .2s,
+    /* width .4s .2s; */
+    width .4s cubic-bezier(1,0,0,1) .2s,
+    background-color .1s;
+
+}
+
+.side-nav-item:hover::before,
+.side-nav-item-active::before
+{
+transform: scaleY(1);
+width: 100%;
+}
+
+.side-nav-item:active::before{
+    background-color: var(--color-Primary-light);
+}
+
+.side-nav-link,
+.side-nav-link:visited{
+    color: var(--Grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+
+.side-nav-icon{
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-right: 2rem;
+    fill:currentColor ;
+    /* color of the parent element */
+}
+
+.legal{
+    font-size:1.2rem;
+    color: var(--Grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.hotel-view{
+
+}
+
+.gallery{
+    display: flex;
+    
+}
+
+.gallery-photo{
+   width: 100%;
+   display: block;
+    /*an imgae should always be a block element  */
+}
+
+
+.overview{
+ display: flex;
+ align-items: center;
+ border-bottom: 1px  solid  var(--Grey-light-2);
+}
+.overview-heading{
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+    color: var(--Grey-dark-2);
+}
+.overview-stars{
+    /* flex: 1; */
+    margin-right: auto;
+    display: flex;
+}
+
+.overview-icon,
+.overview-icon-location{
+    width: 1.7rem;
+    height: 1.7rem;
+    fill: var(--color-Primary);
+
+}
+
+.overview-icon{
+  
+
+}
+
+.overview-location{
+    font-family: 1.2rem;
+    display: flex;
+    vertical-align: center;
+
+}
+
+.overview-icon-location{
+    margin-right: .5rem;
+}
+
+.overview-rating{
+  background-color: var(--color-Primary);
+  margin-left: 3rem;
+  color: white;
+  align-self: stretch;
+  padding: 0 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: -3px ;
+}
+
+.overview-rating-average{
+  font-size: 2.25rem;
+  font-weight: 200;
+}
+
+.overview-rating-count{
+  font-size: .8rem;
+  text-transform:uppercase ;
+}
+
+.btn-inline{
+    border: none;
+    color: var(--color-Primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+    
+}
+
+.btn-inline:focus{
+  outline: none;
+  animation: pulsate 1s infinite;
+}
+
+.btn-inline:hover{
+    color: var(--Grey-dark-1);
+}
+
+.detail{
+  display: flex;
+  padding: 4.5rem;
+  background-color: white;
+  border-bottom: 1px solid var(--Grey-light-2);
+}
+.description{
+ background-color: white;
+ flex: 0 0 60%;
+ margin-right: 4.5rem;
+ padding: 3rem;
+ box-shadow: var(--shadow-light);
+}
+.user-reviews{
+background-color: yellowgreen;
+flex: 1 ;
+}
+
+
+@keyframes pulsate {
+    0%{
+        transform: scale(1);
+        box-shadow: 0;
+    }
+
+    50%{
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+    }
+
+    100%{
+        transform: scale(1);
+        box-shadow: 0;
+
+    }
 }
